@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+    </div>
+
+    <input type="text" name="nombre" id="nombre" placeholder="escribe">
+    <button type="submit">envia</button>
+    <button id="boton" type="submit">enviar</button>
+
+    <script>
+
+        let boton = document.querySelector("button");
+        let boton2 = document.documentElementById("boton")
+        boton2.addEventListener("click",() => alert("manuela"))
+        boton.addEventListener("dblclick", () => alert("click"))
+
+        let div = document.documentElementById("cuadrado");
+        div.addEventListener("mausemove", (event) => console.log ("Eje x ;",event.clientX,"Eje y ;",event.clientY,"Eje y ;",event.clientZ)) 
+        document.addEventListener("keydown",(event) => event.key === "enter"? alert("se presiono"): undefined);
+
+    </script>
+
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 2%;
+
+
+
+        }
+
+
+
+    </style>
+
+
+</body>
+
+</html>
