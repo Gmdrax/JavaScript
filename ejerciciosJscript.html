@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - Tipo Numbers</title>
+    <style>
+        .ejercicio {
+            border: 1px black solid;
+            border-radius: 5px;
+            padding: 10px; /* Añadido un poco de espacio */
+            margin: 10px;
+        }
+
+        .resultado {
+            background-color: rgb(195, 192, 192);
+            padding: 10px;
+            margin-top: 5px;
+            min-height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="titulo">Ejercicios - Tipo numbers</h1>
+    <div class="ejercicio">
+        
+        <h3>Ejercicio 1</h3>
+        <p>Haz una función que de dos números pasados por parámetros indica cúal de ellos es mayor.</p>
+        <div class="resultado" id="resultado1"></div>
+
+        <h3>Ejercicio 2</h3>
+        <p>Haz una función que multiplique dos números (sin usar el signo *) y muestre el resultado.</p>
+        <div class="resultado" id="resultado2"></div>
+
+        <h3>Ejercicio 3</h3>
+        <p>Haz una función que multiplique tres números y muestre el resultado.</p>
+        <div class="resultado" id="resultado3"></div>
+
+        <h3>Ejercicio 4</h3>
+        <p>Espacio reservado para el siguiente ejercicio.</p>
+        <div class="resultado" id="resultado4">
+            aqui el resultado
+        </div>
+
+        <h3>Ejercicio 5</h3>
+        <p>Espacio reservado para el siguiente ejercicio.</p>
+        <div class="resultado" id="resultado5">
+            aqui el resultado
+        </div>
+
+        <h3>Ejercicio 6</h3>
+        <p>Espacio reservado para el siguiente ejercicio.</p>
+        <div class="resultado" id="resultado6">
+            aqui el resultado
+        </div>
+
+    </div>
+
+    <script>
+
+    
+        function mostrarMayor(num1, num2) {
+            
+            let resultado = "";
+
+            if (num1 > num2) {
+                resultado = "El mayor es: " + num1;
+            } else if (num2 > num1) {
+                resultado = "El mayor es: " + num2;
+            } else {
+                resultado = "Son iguales";
+            }
+            console.log(resultado);
+
+            const contenedor = document.getElementById("resultado1");
+            contenedor.innerHTML = ""; 
+
+            let divNumeros = document.createElement("div");
+            divNumeros.textContent = "Comparando los números: " + num1 + " y " + num2;
+            contenedor.appendChild(divNumeros);
+
+            let divResultado = document.createElement("div");
+            divResultado.textContent = resultado;
+            contenedor.appendChild(divResultado);
+        }
+
+        mostrarMayor(8, 20);
+
+        function multiplicar(a, b) {
+            let resultadoCalculo = 0;
+            
+            for (let i = 0; i < b; i++) {
+                resultadoCalculo += a;
+            }
+
+            const cajaEjercicio2 = document.getElementById("resultado2");
+            cajaEjercicio2.innerHTML = ""; 
+
+            let divDatos = document.createElement("div");
+            divDatos.textContent = "Operación: " + a + " x " + b;
+            cajaEjercicio2.appendChild(divDatos);
+
+            let divResultado = document.createElement("div");
+            divResultado.textContent = "El resultado es: " + resultadoCalculo;
+            cajaEjercicio2.appendChild(divResultado);
+
+            return resultadoCalculo;
+        }
+
+        multiplicar(4, 3);
+
+        function multiplicar3(a, b, c) {
+            
+            let resultadoCalculo = multiplicar(multiplicar(a,b),c)
+
+            const cajaEjercicio3 = document.getElementById("resultado3");
+            cajaEjercicio3.innerHTML = "";
+
+            let divDatos = document.createElement("div");
+            divDatos.textContent = "Operación: " + a + " x " + b + " x " + c;
+            cajaEjercicio3.appendChild(divDatos);
+
+            let divResultado = document.createElement("div");
+            divResultado.textContent = "El resultado es: " + resultadoCalculo;
+            cajaEjercicio3.appendChild(divResultado);
+      
+        }
+
+        multiplicar3(4, 3, 2);
+
+
+        function separarVocalesDeConsonantes(texto) {
+            
+            let vocales = "";
+            let consonantes = "";
+            
+            const listaVocales = "aeiouáéíóúAEIOUÁÉÍÓÚ";
+
+            for (let letra of texto) {
+                
+                if (listaVocales.includes(letra)) {
+                    vocales += letra;
+                } 
+                else if (letra.toLowerCase() != letra.toUpperCase()) {
+                    consonantes += letra; 
+                }
+            }
+
+            return vocales
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>
